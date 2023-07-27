@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<p>{{ message }}</p>
+<div class="container" style="height: 500px ;width:500px;">
+    <h1>Login</h1>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    {% comment %} <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="username">Username :</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password :</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form> {% endcomment %}
+
+    <form method="POST">{% csrf_token %}
+       
+    
+    <div class="container align-content-between justify-content-between">
+        <div class="form-floating">
+            <input type="username" class="form-control" id="floatingInput" name="username" placeholder="Username">
+            <label for="floatingInput">Username</label>
+          </div>
+          <br>
+          <div class="form-floating ">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <br>
+          <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
+        
+    </div>
+  
+    </form>
+    <br>
+    Don't have an account? <a class="btn btn-primary py-2" href="/signup">Sign-Up</a>
+</div>
+
+{%endblock%}
