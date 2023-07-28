@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block content%}
+<h3>
+    Login here
+</h3>
+
+<p>{{ message }}</p>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" >Submit</button>
+    </form>
+
+{% comment %} <form action="" method="POST">{%csrf_token%}
+
+    <label for="Username">
+        Username 
+        <input type="text" required  name="Username" placeholder="username">
+    </label>
+    <label for="Password">
+        Password 
+        <input type="text" required name="Password" placeholder="Password">
+    </label>
+    <button type="submit" >Login</button>
+    
+
+</form> {% endcomment %}
+
+{%endblock%}
